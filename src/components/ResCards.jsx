@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
 
 const ResCards = ({ resData }) => {
-    // Destructuring the first item of resData
     const { data } = resData;
     const [showFullCuisines, setShowFullCuisines] = useState(false);
 
-    // Function to toggle between trimmed and full cuisines
     const toggleCuisines = () => {
         setShowFullCuisines(!showFullCuisines);
     };
 
-    // Truncate the cuisines to show only the first two words
     const truncatedCuisines = data.cuisines.slice(0, 2).join(', ');
 
     return (
-      <div className='max-w-md mx-auto rounded overflow-hidden shadow-lg'>
+      <div className='max-w-md mx-auto rounded overflow-hidden shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform duration-300 cursor-pointer'>
         <img
           className='w-full h-48 object-cover'
           src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/${data.cloudinaryImageId}`}

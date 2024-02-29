@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 
 const Header = () => {
+    const [btnName , setBtnName] = useState("Login")
+
+    function clickHandler(){
+        if( btnName ==="Login"){
+            setBtnName("Logout")
+        }
+        else{
+            setBtnName("Login")
+        }
+    }
   return (
     <div className='flex flex-row items-center justify-between py-4 px-8 bg-gray-800 text-white'>
       <div>
@@ -14,7 +24,7 @@ const Header = () => {
           <li><a href="#" className='hover:text-gray-400'>Contact</a></li>
         </ul>
         <FaShoppingCart className='text-2xl cursor-pointer hover:text-gray-400'/>
-        <button className='py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600'>Login/Signup</button>
+        <button className='py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600' onClick={clickHandler}>{btnName}</button>
       </nav>
     </div>
   );

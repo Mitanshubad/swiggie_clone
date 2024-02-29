@@ -11,8 +11,11 @@ function App() {
 
   return (
     <div>
-      <Header/>
+    <div className=' flex flex-col gap-5'>
+    <Header/>
       <Body/>
+    </div>
+   
        <Footer/>
     
     </div>
