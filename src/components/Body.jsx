@@ -1,6 +1,6 @@
 import React from 'react';
 import ResCards from './ResCards';
-import { resData } from '../../../../data';
+import { resData } from '../data'
 
 const Body = () => {
   return (
